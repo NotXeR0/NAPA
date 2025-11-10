@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> NAPA - Servicios Financieros</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="napamini.png" type="image/png">
+</head>
+<body>
+  <header>
+    <img src="nap4.png" alt="Logo NAPA" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#quienes-somos">¿QUIÉNES SOMOS?</a></li>
+        <li><a href="#contacto">CONTÁCTANOS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sección principal -->
+    <section class="hero" id="quienes-somos">
+      <div class="text-block">
+        <h2>Te ayudamos a alcanzar tus metas económicas</h2>
+        <p>
+          Con asesorías personalizadas, créditos accesibles, estrategias de inversión y servicios contables profesionales.
+        </p>
+      </div>
+      <img src="imagen1.jpg" alt="Servicios Financieros" class="hero-img">
+    </section>
+
+    <!-- Sección intermedia -->
+    <section class="services">
+      <img src="imagen2.jpg" alt="Asesorías" class="service-img">
+      <div class="service-text">
+        <h3>¿Ocupas un crédito hipotecario, asesoría personalizada o una inversión segura?</h3>
+        <p>
+          En <strong>NAPA</strong> te ayudamos a tomar las mejores decisiones financieras para alcanzar tus metas.
+          Ofrecemos asesorías financieras, créditos accesibles, inversiones seguras y contabilidad profesional.
+          Confía en nosotros para encontrar la solución que más se adapte a tus necesidades.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sección de contacto -->
+    <section id="contacto" class="contact">
+      <img src="imagen3.jpg" alt="Contáctanos" class="contact-img">
+      <div class="contact-form">
+        <h3>Contáctanos</h3>
+
+        <!-- Formulario -->
+        <form action="https://formspree.io/f/xblqrqyq" method="POST">
+          <label>Escribe tu nombre completo:
+            <input type="text" name="Nombre del cliente" required>
+          </label>
+
+          <label>Escribe tu correo:
+            <input type="email" name="Escribe aquí tu mejor correo" required>
+          </label>
+
+          <label>Escriba su número de celular:
+            <input type="text" name="Número de Celular">
+          </label>
+
+          <div class="checkbox-group">
+            <p>¿Cómo te contactamos?</p>
+            <p><label><input type="checkbox" name="Whatsapp"> Whatsapp</label></p>
+            <label><input type="checkbox" name="Correo Electrónico"> Correo Electrónico</label>
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 NAPA | Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
