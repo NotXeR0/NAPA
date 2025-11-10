@@ -1,4 +1,4 @@
-// Scroll suave a secciones
+// Really i'm very tired of this LMAO
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
