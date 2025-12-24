@@ -25,7 +25,6 @@
       line-height: 1.6;
     }
 
-    /* HEADER */
     header {
       background: #fff;
       border-bottom: 1px solid #e5e5e5;
@@ -36,7 +35,7 @@
     }
 
     header img {
-      height: 50px; /* logo.png / logo.jpg */
+      height: 50px;
     }
 
     nav a {
@@ -54,7 +53,6 @@
       text-decoration: none;
     }
 
-    /* HERO */
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -66,7 +64,7 @@
 
     .hero img {
       width: 100%;
-      border-radius: 8px; /* imagen1.jpg / imagen1.png */
+      border-radius: 8px;
     }
 
     section {
@@ -78,7 +76,6 @@
       margin-bottom: 20px;
     }
 
-    /* SERVICIOS */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -92,7 +89,6 @@
       background: #fff;
     }
 
-    /* POR QUE NAPA */
     .why {
       background: var(--secondary);
     }
@@ -106,7 +102,7 @@
 
     .why-grid img {
       width: 100%;
-      border-radius: 8px; /* imagen2.jpg / imagen2.png */
+      border-radius: 8px;
     }
 
     .why ul {
@@ -117,11 +113,9 @@
       margin-bottom: 10px;
     }
 
-    /* QUIENES SOMOS */
     .about {
       display: flex;
       justify-content: center;
-      align-items: center;
       text-align: center;
     }
 
@@ -129,14 +123,12 @@
       max-width: 800px;
     }
 
-    /* PROCESO */
     .process {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
     }
 
-    /* CONTACTO */
     .contact {
       text-align: center;
     }
@@ -165,7 +157,19 @@
       border-radius: 4px;
     }
 
-    /* FOOTER */
+    .form-status {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+
     footer {
       background: #111;
       color: #fff;
@@ -178,7 +182,6 @@
       margin-bottom: 8px;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       .hero,
       .why-grid {
@@ -237,7 +240,7 @@
     <h2>¿Quiénes Somos?</h2>
     <p>
       Somos una empresa dedicada a brindar servicios integrales con altos estándares de calidad,
-      enfocada en ofrecer soluciones eficientes y confiables para nuestros clientes.
+      enfocada en ofrecer soluciones eficientes y confiables.
     </p>
   </div>
 </section>
@@ -254,7 +257,7 @@
 
 <section id="contacto" class="contact">
   <h2>Contacto</h2>
-  <form action="https://formspree.io/f/xblqrqyq" method="POST">
+  <form id="contactForm">
     <input type="text" name="nombre" placeholder="Nombre" required>
     <input type="email" name="email" placeholder="Correo" required>
     <select name="servicio">
@@ -265,6 +268,7 @@
     </select>
     <textarea name="mensaje" rows="4" placeholder="Mensaje"></textarea>
     <button type="submit">Enviar</button>
+    <div id="formStatus" class="form-status"></div>
   </form>
 </section>
 
@@ -274,10 +278,40 @@
   <p>napaserviciosintegrales@gmail.com</p>
 </footer>
 
+<script>
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    status.textContent = "Enviando...";
+    status.className = "form-status";
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xblqrqyq", {
+        method: "POST",
+        body: data,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        status.textContent = "Mensaje enviado correctamente.";
+        status.classList.add("success");
+        form.reset();
+      } else {
+        status.textContent = "Error del servidor. Código: " + response.status;
+        status.classList.add("error");
+      }
+    } catch (error) {
+      status.textContent = "Error de conexión. Intente más tarde.";
+      status.classList.add("error");
+    }
+  });
+</script>
+
 </body>
 </html>
-
-
-
-
-
