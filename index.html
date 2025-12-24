@@ -1,86 +1,298 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> NAPA - Servicios Financieros</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="napamini.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NAPA | Servicios Integrales</title>
+
+  <style>
+    :root {
+      --primary: #1f3c88;
+      --secondary: #f5f7fa;
+      --accent: #f2b705;
+      --text: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      color: var(--text);
+      background-color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img {
+      height: 50px;
+      /* logo.png / logo.jpg */
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 80px 40px;
+      background: var(--secondary);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 8px;
+      /* imagen1.jpg / imagen1.png */
+    }
+
+    section {
+      padding: 70px 40px;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      border: 1px solid #e5e5e5;
+      padding: 25px;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .why {
+      background: var(--secondary);
+    }
+
+    .why ul {
+      list-style: none;
+    }
+
+    .why li {
+      margin-bottom: 10px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: #fff;
+      border-left: 4px solid var(--primary);
+      padding: 20px;
+      margin-top: 15px;
+    }
+
+    form {
+      max-width: 500px;
+      margin-top: 20px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 30px 40px;
+      margin-top: 60px;
+    }
+
+    footer p {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <img src="nap4.png" alt="Logo NAPA" class="logo">
-    <nav>
-      <ul>
-        <li><a href="#quienes-somos">¿QUIÉNES SOMOS?</a></li>
-        <li><a href="#contacto">CONTÁCTANOS</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <!-- Sección principal -->
-    <section class="hero" id="quienes-somos">
-      <div class="text-block">
-        <h2>Te ayudamos a alcanzar tus metas económicas</h2>
-        <p>
-          Con asesorías personalizadas, créditos accesibles, estrategias de inversión y servicios contables profesionales.
-        </p>
-      </div>
-      <img src="imagen1.jpg" alt="Servicios Financieros" class="hero-img">
-    </section>
+<header>
+  <img src="logo.png" alt="NAPA Logo">
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#nosotros">Quiénes somos</a>
+    <a href="#contacto" class="btn">Agenda una asesoría</a>
+  </nav>
+</header>
 
-    <!-- Sección intermedia -->
-    <section class="services">
-      <img src="imagen2.jpg" alt="Asesorías" class="service-img">
-      <div class="service-text">
-        <h3>¿Ocupas un crédito hipotecario, asesoría personalizada o una inversión segura?</h3>
-        <p>
-          En <strong>NAPA</strong> te ayudamos a tomar las mejores decisiones financieras para alcanzar tus metas.
-          Ofrecemos asesorías financieras, créditos accesibles, inversiones seguras y contabilidad profesional.
-          Confía en nosotros para encontrar la solución que más se adapte a tus necesidades.
-        </p>
-      </div>
-    </section>
+<section class="hero" id="inicio">
+  <div>
+    <h1>Soluciones financieras claras y confiables</h1>
+    <p>
+      En NAPA te ayudamos a ordenar tus finanzas, acceder a crédito y tomar mejores decisiones económicas con asesoría profesional.
+    </p>
+    <br>
+    <a href="#contacto" class="btn">Habla con un asesor</a>
+  </div>
 
-    <!-- Sección de contacto -->
-    <section id="contacto" class="contact">
-      <img src="imagen3.jpg" alt="Contáctanos" class="contact-img">
-      <div class="contact-form">
-        <h3>Contáctanos</h3>
+  <img src="imagen1.jpg" alt="Imagen principal">
+</section>
 
-        <!-- Formulario -->
-        <form action="https://formspree.io/f/xblqrqyq" method="POST">
-          <label>Escribe tu nombre completo:
-            <input type="text" name="Nombre del cliente" required>
-          </label>
+<section id="servicios">
+  <h2>Qué hacemos</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Asesoría Financiera</h3>
+      <p>Diagnóstico y acompañamiento personalizado para mejorar tu situación económica.</p>
+    </div>
 
-          <label>Escribe tu correo:
-            <input type="email" name="Escribe aquí tu mejor correo" required>
-          </label>
+    <div class="card">
+      <h3>Créditos</h3>
+      <p>Orientación y gestión de opciones de crédito acordes a tus necesidades.</p>
+    </div>
 
-          <label>Escribe tu número de celular:
-            <input type="text" name="Número de Celular">
-          </label>
+    <div class="card">
+      <h3>Inversiones</h3>
+      <p>Estrategias claras y responsables para hacer crecer tu capital.</p>
+    </div>
 
-          <div class="checkbox-group">
-            <p>¿Cómo te contactamos?</p>
-            <p><label><input type="checkbox" name="Whatsapp"> Whatsapp</label></p>
-            <label><input type="checkbox" name="Correo Electrónico"> Correo Electrónico</label>
-          </div>
+    <div class="card">
+      <h3>Servicios Contables</h3>
+      <p>Apoyo administrativo y contable para personas y pequeños negocios.</p>
+    </div>
+  </div>
+</section>
 
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
-    </section>
-  </main>
+<section class="why">
+  <h2>Por qué elegir NAPA</h2>
+  <ul>
+    <li>Atención personalizada</li>
+    <li>Lenguaje claro y sin tecnicismos</li>
+    <li>Transparencia y responsabilidad</li>
+    <li>Enfoque en resultados reales</li>
+    <li>Acompañamiento continuo</li>
+  </ul>
+</section>
 
-  <footer>
-    <p>© 2025 NAPA | Todos los derechos reservados.</p>
-    <p>Made by: Luis Fernando Navarro Panduro</p>
-  </footer>
+<section id="nosotros">
+  <h2>Quiénes somos</h2>
+  <p>
+    NAPA – Servicios Integrales es una empresa ubicada en Navojoa, Sonora, dedicada a brindar soluciones financieras y administrativas de forma cercana, profesional y confiable.
+  </p>
 
-  <script src="script.js"></script>
+  <br>
+
+  <strong>Misión:</strong>
+  <p>Brindar asesoría financiera clara y responsable que ayude a nuestros clientes a tomar mejores decisiones económicas.</p>
+
+  <strong>Visión:</strong>
+  <p>Ser una empresa reconocida en la región por su profesionalismo, confianza y resultados.</p>
+
+  <strong>Valores:</strong>
+  <p>Transparencia, Responsabilidad, Confianza y Compromiso.</p>
+</section>
+
+<section>
+  <h2>Cómo trabajamos</h2>
+  <div class="process">
+    <div class="card">Análisis de la situación</div>
+    <div class="card">Diseño de solución personalizada</div>
+    <div class="card">Acompañamiento en el proceso</div>
+    <div class="card">Seguimiento y soporte</div>
+  </div>
+</section>
+
+<section>
+  <h2>Testimonios</h2>
+  <div class="testimonial">
+    “Gracias a NAPA pude organizar mis finanzas y recibir orientación clara.”
+  </div>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+
+  <form action="https://formspree.io/f/xblqrqyq" method="POST">
+    <input type="text" name="nombre" placeholder="Nombre completo" required>
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+    <input type="tel" name="telefono" placeholder="Teléfono">
+    
+    <select name="servicio">
+      <option value="">Servicio de interés</option>
+      <option>Asesoría financiera</option>
+      <option>Créditos</option>
+      <option>Inversiones</option>
+      <option>Servicios contables</option>
+    </select>
+
+    <textarea name="mensaje" rows="4" placeholder="Mensaje"></textarea>
+
+    <button type="submit">Enviar solicitud</button>
+  </form>
+
+  <br>
+
+  <p><strong>Dirección:</strong> Poste 7, Navojoa, Sonora, Sibacobe Tesia KM 5 – 85238</p>
+  <p><strong>Correo:</strong> napaserviciosintegrales@gmail.com</p>
+</section>
+
+<footer>
+  <p>© 2025 NAPA – Servicios Integrales</p>
+  <p>Aviso de privacidad | Términos y condiciones</p>
+</footer>
+
+<script>
+  // Espacio para futuras funciones JavaScript
+  console.log("NAPA website loaded");
+</script>
+
 </body>
 </html>
-
