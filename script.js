@@ -1,10 +1,30 @@
-// Really i'm very tired of this LMAO
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+// script.js
+
+// Seguimiento de clics en WhatsApp
+const whatsappButtons = document.querySelectorAll(
+'a[href*="wa.me"]'
+);
+
+whatsappButtons.forEach(button => {
+
+button.addEventListener('click', () => {
+
+if(typeof gtag !== 'undefined'){
+
+gtag('event','click_whatsapp',{
+event_category:'Contacto',
+event_label:'WhatsApp'
 });
+
+}
+
+});
+
+});
+
+// Año automático en footer (opcional)
+const yearElement = document.querySelector('.year');
+
+if(yearElement){
+yearElement.textContent = new Date().getFullYear();
+}
